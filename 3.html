@@ -1,40 +1,15 @@
 
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-<style>
-h1 {font-size:45px;
-text-align: center;
-border-bottom:15px solid beige;
-margin:0px;
-padding:20px;}
-
-
-li{color: green;
-}
-a{color: black;text-decoration: none;font-size: 20px}
-
-  #grid{
-border:5px;
-display:grid;
-grid-template-columns: 150px 1fr;
-}
-
-#article{border-left:5px solid beige;
-padding:15px}
-
-table, th, td ,tr{
-  border: 1px solid black;
-
-</style>
-
-
-<a href="index.html"><font color="olive"><h1>나의 story<img src="책.jpg" alt="책.jpg" style="width:60px;height:60px;"></h1></font></a>
-</head>
 
     <meta charset="utf-8">
     <title>나의 첫번째 웹</title>
+    <link href="mystyle.css" rel="stylesheet">
 
+</head>
 <body>
+  <a href="index.html"><font color="olive"><h1>나의 story<img src="책.jpg" alt="책.jpg" style="width:60px;height:60px;"></h1></font></a>
   <div id="grid">
   <div id="navigation">
     <ul>
@@ -46,7 +21,8 @@ table, th, td ,tr{
       </ul>
   </div>
   <div id="article">
-    <h2><p>싱가포르</p></h2>
+  <div id="싱가포르 표">
+      <h2><p>싱가포르</p></h2>
 <h3>국기</h3>
 <img src="싱가포르.png" alt="싱가포르.png" style="width:720px;height:400px;">
 
@@ -83,12 +59,13 @@ table, th, td ,tr{
   <td>인구</td>
   <td>516만(2017년)</td>
 </tr>
+</div>
+<div id="국기">
+<img src="싱가포르.png" alt="싱가포르.png" style="width:720px;height:400px;">
+</div>
 
   </div>
 
 
-
-
-
-
 </body>
+</html>
