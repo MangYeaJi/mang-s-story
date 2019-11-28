@@ -6,20 +6,26 @@ margin:0px;
 padding:20px;}
 
 
-li{color: green;
+#list1{font-size:20px
 }
+#list2{font-size:10px}
 
 a{color: black;text-decoration: none;font-size: 20px}
 
 #grid{
 border:5px;
 display:grid;
-grid-template-columns: 150px 1fr;
+grid-template-columns: 220px  1fr 350px ;
 }
 
 #article{border-left:5px solid beige
 ;padding:15px;
-background-color:beige}
+background-color: beige
+}
+
+#article2{border-left: 5px solid beige;padding:15px;}
+
+#a2{color: black;text-decoration: none;font-size: 15px}
 
 h2,h3,h4,h5{font-size: 25px; font-style: bold}
 
@@ -27,6 +33,7 @@ table, th, td ,tr{
   border: 1px solid black;
 }
 
+img{}
 @media(max-width:800px){
 #grid{
   display: block;}
