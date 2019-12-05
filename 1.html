@@ -30,14 +30,19 @@
       background-color: white;
       overflow: hidden;
     }
-    @media(max-width:800px){
-    #grid{
-      display: block;}
-    #article{
-      border-left: none;
+    @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
     }
-    h1{border-bottom: none;}
 
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
     }
     </style>
 </head>
