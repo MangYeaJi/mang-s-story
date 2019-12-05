@@ -6,7 +6,31 @@
     <meta charset="utf-8">
     <title>나의 첫번째 웹</title>
     <link href="mystyle.css" rel="stylesheet">
+    <style>
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
 
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+    }
+    </style>
 </head>
 
 <body>
@@ -14,29 +38,41 @@
 
   <div id="grid">
     <div id="navigation">
-      <ul id="list1">
+      <h2>INDEX</h2>
 
-        <li>영화
-          <ol>
-        <li><a href="1.html"
-        class="abouttime"><strong>어바웃 타임</strong></a></li>
-      </ol>
-        </li>
+<button class="accordion">영화</button>
+<div class="panel">
+  <p><a href="1.html"
+  class="abouttime"><strong>어바웃 타임</strong></a></p>
+</div>
 
-        <li>음식
-          <ol>
+<button class="accordion">음식</button>
+<div class="panel">
+  <p><a href="2.html"
+  id="crap"><strong>칠리 크랩</strong></a></p>
+</div>
 
-        <li><a href="2.html"
-        id="crap"><strong>칠리 크랩</strong></a></li>
-    </ol>
-        </li>
+<button class="accordion">여행</button>
+<div class="panel">
+  <p><a href="3.html"><strong>싱가포르</strong></a></p>
+</div>
 
-        <li>여행
-          <ol>
-        <li><a href="3.html"><strong>싱가포르</strong></a></li>
-      </ol>
-      </li>
-      </ul>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
     </div>
   <div id="article">
     <h2>어바웃 타임</h2>

@@ -5,36 +5,110 @@
     <meta charset="utf-8">
     <title>나의 첫번째 웹</title>
 <link href="mystyle.css" rel="stylesheet">
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
 
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
 </head>
 
 <body>
   <a href="index.html"><font color="white"><h1>맹예지의 story:)</h1></font></a>
   <div id="grid">
   <div id="navigation">
-    <ul id="list1">
+    <h2>INDEX</h2>
 
-      <li>영화
-        <ol>
-      <li><a href="1.html"
-      class="abouttime"><strong>어바웃 타임</strong></a></li>
-    </ol>
-      </li>
+  <button class="accordion">영화</button>
+  <div class="panel">
+  <p><a href="1.html"
+  class="abouttime"><strong>어바웃 타임</strong></a></p>
+  </div>
 
-      <li>음식
-        <ol>
+  <button class="accordion">음식</button>
+  <div class="panel">
+  <p><a href="2.html"
+  id="crap"><strong>칠리 크랩</strong></a></p>
+  </div>
 
-      <li><a href="2.html"
-      id="crap"><strong>칠리 크랩</strong></a></li>
-  </ol>
-      </li>
+  <button class="accordion">여행</button>
+  <div class="panel">
+  <p><a href="3.html"><strong>싱가포르</strong></a></p>
+  </div>
 
-      <li>여행
-        <ol>
-      <li><a href="3.html"><strong>싱가포르</strong></a></li>
-    </ol>
-    </li>
-    </ul>
+  <script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var panel = this.nextElementSibling;
+  if (panel.style.display === "block") {
+    panel.style.display = "none";
+  } else {
+    panel.style.display = "block";
+  }
+  });
+  }
+  </script>
   </div>
   <div id="article">
   <h2><p> 칠리크랩</p></h2>
@@ -46,6 +120,41 @@
     </p>
     <img src="칠리크랩1.jpg" alt="칠리크랩1.jpg" style="width:720px;height:400px;">
     <h3><p>칠리크랩의 종류</p></h3>
+    <p>메뉴를 눌러보세요:)</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">칠리크랩</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">페퍼크랩</button>
+
+</div>
+
+<div id="London" class="tabcontent">
+  <h3>칠리크랩</h3>
+  <p>칠리 크랩은 싱가포르의 매운 게요리이다. 연갑게를 토마토 칠리 소스의 걸쭉한 양념과 함께 볶아 내고 향초를 곁들여 먹는다.</p>
+    <p> 말레이시아 전통음식과 중국 음식의 특성이 혼합된 싱가포르 문화의 특성을 잘나타내주고 있다</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>페퍼 크랩</h3>
+  <p>중국, 인도 등의 영향을 받아 섞인 독특한 음식 문화를 가지고 있다. 칠리 크랩: 매운 토마토 소스의 게 요리. 블랙페퍼 크랩: 칠리 크랩과 함께 유명한 후추 소스로 만든 게 요리. 블랙소스 프론: 검은 두반장 소스의 대하 요리. 삼발 머슬: 삼발소스를 얹어 쪄낸 홍합</p>
+</div>
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 
   <p>  페퍼크랩은 싱가포르에서 칠리크랩의 사촌 격으로 언급되는 또 다른 게 요리이다.<p>
     <p>칠리소스로 매콤한 맛을 낸 칠리크랩과 달리 페퍼크랩은 페퍼, 즉 후추로 매운맛을 낸다.</p>
